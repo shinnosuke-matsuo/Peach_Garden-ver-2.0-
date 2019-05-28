@@ -1,0 +1,6 @@
+class AddIndexToMessage < ActiveRecord::Migration[5.2]
+  def change
+    add_index :messages, :room_id
+    add_index :messages, :created_at
+  end
+end

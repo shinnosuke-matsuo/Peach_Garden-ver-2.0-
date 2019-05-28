@@ -1,0 +1,9 @@
+<% provide(:title, 'All matchings') %>
+<h1>All mattchings</h1>
+
+
+<ul class="users">
+  <% @matching_microposts.each do |matching_microposts| %>
+    <%= render matching_microposts %>
+  <% end %>
+</ul>

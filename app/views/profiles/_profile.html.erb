@@ -1,0 +1,12 @@
+<li>
+  <%= gravatar_for profile.user, size: 50 %>
+  <%= link_to profile.user.name, profile.user %>
+
+    <% if !profile.present?  %>
+      <%= "..." %>
+    <% elsif profile.content.length < 80 %>
+      <%= profile.content %>
+    <% else %>
+      <%= profile.content[0, 79] + "..." %>
+    <% end %>
+</li>

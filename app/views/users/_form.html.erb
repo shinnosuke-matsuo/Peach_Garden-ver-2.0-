@@ -1,0 +1,23 @@
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name , class: 'form-control' %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email , class: 'form-control' %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password , class: 'form-contorol' %>
+
+  <%= f.label :password_confirmation, "Confirmation"  %>
+  <%= f.text_field :password_confirmation , class: 'form-control' %>
+
+  <ul>
+   <li><%= check_box "role", "entrepreneur" %>アントレプレナー</li>
+   <li><%= check_box "role", "programmer" %>プログラマー</li>
+   <li><%= check_box "role", "designer" %>デザイナー</li>
+  </ul>
+
+　<%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,40 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="profile_form">
+        <%= form_for(@profile) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+
+          <%= f.label :content %>
+          <%= f.text_field :content , class: 'form-control' %>
+
+          <%= f.label :Related_links %>
+          <%= f.text_field :Related_links , class: 'form-control' %>
+
+          <%= f.label :carrer %>
+          <%= f.text_field :carrer , class: 'form-contorol' %>
+
+          <%= f.label :portfolio  %>
+          <%= f.text_field :portfolio , class: 'form-control' %>
+        <% end %>
+
+      </section>
+    </aside>
+    <div class="col-md-8">
+       <%= render 'explanation' %>
+    </div>
+  </div>
+<% else %>
+
+<div class="center jumbotron">
+  <h1>Welcome to the Peach Garden</h1>
+
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= render 'explanation' %>
+
+<% end %>
