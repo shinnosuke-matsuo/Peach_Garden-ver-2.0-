@@ -1,14 +1,18 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-  <% if current_user.role == "entrepreneur" %>
-    <%= link_to "Peach Garden for entrepreneur", root_path, id: "logo" %>
-  <% end %>
-  <% if current_user.role == "programmer" %>
-    <%= link_to "Peach Garden for programmer", root_path, id: "logo" %>
-  <% end %>
-  <% if current_user.role == "designer" %>
-    <%= link_to "Peach Garden for designer", root_path, id: "logo" %>
-  <% end %>
+    <% if logged_in? %>
+      <% if current_user.role == "entrepreneur" %>
+        <%= link_to "Peach Garden for entrepreneur", root_path, id: "logo" %>
+      <% end %>
+      <% if current_user.role == "programmer" %>
+        <%= link_to "Peach Garden for programmer", root_path, id: "logo" %>
+      <% end %>
+      <% if current_user.role == "designer" %>
+        <%= link_to "Peach Garden for designer", root_path, id: "logo" %>
+      <% end %>
+    <% else %>
+      <%= link_to "Peach Garden", root_path, id: "logo" %>
+    <% end %>
 
   <nav>
       <ul class="nav navbar-nav navbar-right">
